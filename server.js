@@ -23,26 +23,25 @@ server.use(errorHandler);
 ///////////////////////////////////////////////////////////////////////
 //Callback Functions
 ///////////////////////////////////////////////////////////////////////
+let tempArr;
 function locationHandler(req, res) {
-  // const url = https://maps.googleapis.com/maps/api/geocode/json?address=&key=YOUR_API_KEY
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${req.query.data}&key=${process.env.GEOCODE_API_KEY}`;
   superagent.get(url).then(data => {
-    console.log(data.body);
-    new Location(req.query.data, data.body);
+    let location = (new Location(req.query.data, data.body));
+    res.status(200).send(location);
+    tempArr = (location);
   }).catch(error => errorHandler(error, req, res));
-  
-  // let rawData = require('./data/geo.json');
-  // let location = new Location('Seattle', rawData);
-  // res.status(200).json(location);
 }
-
 //Building a path to /weather
 function weatherHandler(req, res) {
-  let wetData = require('./data/darksky.json');
-  let arr = wetData.daily.data.map(value => {
-    return new Forecast(value);
-  });
-  res.send(arr);
+  console.log(tempArr);
+  const url = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${tempArr.latitude},${tempArr.longitude}`
+  superagent.get(url).then(data => {
+    let arr = data.daily.data.map(value => {
+      return new Forecast(value);
+    });
+    res.send(arr);
+  })
 }
 
 function notFound(req, res) {
@@ -52,6 +51,7 @@ function notFound(req, res) {
 function errorHandler(error, req, res) {
   res.status(500).send(error);
 }
+
 
 ///////////////////////////////////////////////////////////////////////
 //Constructor Functions
