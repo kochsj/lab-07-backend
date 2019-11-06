@@ -31,10 +31,8 @@ function locationHandler(req, res) {
 //Building a path to /weather
 function weatherHandler(req, res) {
   let wetData = require('./data/darksky.json');
-  let arr = [];
-  wetData.daily.data.forEach(value => {
-    let temp = new Forecast(value);
-    arr.push(temp);
+  let arr = wetData.daily.data.map(value => {
+    return new Forecast(value);
   });
   res.send(arr);
 }
