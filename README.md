@@ -68,9 +68,45 @@ Actual time needed to complete: 40min
 **Author**: Stephen Koch, Coel Tyrell
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
-Number and name of feature: ________________________________
+Number and name of feature: Getting Location
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1hr
+
+Start time: _____
+
+Finish time: _____
+
+
+
+Actual time needed to complete: _____
+
+Number and name of feature: Lattitude and Longitude
+
+Estimate of time needed to complete: 1hr
+
+Start time: _____
+
+Finish time: _____
+
+
+
+Actual time needed to complete: _____
+
+Number and name of feature: Weather Patterns
+
+Estimate of time needed to complete: 1hr
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+
+
+Number and name of feature: EventBrite
+
+Estimate of time needed to complete: 1hr
 
 Start time: _____
 
