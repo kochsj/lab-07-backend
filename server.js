@@ -24,16 +24,11 @@ server.use(errorHandler);
 //Callback Functions
 ///////////////////////////////////////////////////////////////////////
 function locationHandler(req, res) {
-  // const url = https://maps.googleapis.com/maps/api/geocode/json?address=&key=YOUR_API_KEY
   const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${req.query.data}&key=${process.env.GEOCODE_API_KEY}`;
   superagent.get(url).then(data => {
-    console.log(data.body);
-    new Location(req.query.data, data.body);
+    let location = new Location(req.query.data, data.body);
+    res.status(200).send(location);
   }).catch(error => errorHandler(error, req, res));
-  
-  // let rawData = require('./data/geo.json');
-  // let location = new Location('Seattle', rawData);
-  // res.status(200).json(location);
 }
 
 //Building a path to /weather
