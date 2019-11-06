@@ -45,20 +45,6 @@ function errorHandler(error, req, res){
   res.status(500).send(error);
 }
 
-//Building path to /location data
-// server.get('/location', (request, response) => {
-//   const geoData = require('./data/geo.json');
-//   const city = request.query.data;
-//   const locationData = new Location(city, geoData);
-//   if(request.query.data === undefined){
-//     response.send( new Error(500, "Sorry, something went wrong!") );
-//   } else{
-//     response.send(locationData);
-//   }
-// });
-  
-
-
 ///////////////////////////////////////////////////////////////////////
 //Constructor Functions
 ///////////////////////////////////////////////////////////////////////
