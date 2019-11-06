@@ -72,25 +72,24 @@ Number and name of feature: Getting Location
 
 Estimate of time needed to complete: 1hr
 
-Start time: _____
+Start time: 9:30 am
 
-Finish time: _____
+Finish time: 10:30 am
 
+Actual time needed to complete: 1 hour
 
-
-Actual time needed to complete: _____
 
 Number and name of feature: Lattitude and Longitude
 
 Estimate of time needed to complete: 1hr
 
-Start time: _____
+Start time: 10:46
 
 Finish time: _____
 
-
-
 Actual time needed to complete: _____
+
+
 
 Number and name of feature: Weather Patterns
 
