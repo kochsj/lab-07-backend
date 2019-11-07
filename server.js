@@ -60,7 +60,6 @@ function weatherHandler(req, res) {
 function trailsHandler(req, res) {
   const url = `https://www.hikingproject.com/data/get-trails?lat=${req.query.data.latitude}&lon=${req.query.data.longitude}&key=${process.env.TRAIL_API_KEY}`
   superagent.get(url).then(data => {
-    // console.log(data.body.trails);
     let trailData = data.body.trails.map(value => {
       return new Trail(value);
     });
@@ -69,25 +68,28 @@ function trailsHandler(req, res) {
 }
 
 
-
-
 ///////////////////////////////////////////////////////////////////////
 //Constructor Functions
 ///////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////
+//Forecast Constructor
 function Forecast(each) {
   let temp = new Date((each.time) * 1000);
   let tempScr = temp.toUTCString().slice(0, 16);
   this.forecast = each.summary;
   this.time = tempScr;
 }
-
+///////////////////////////////////////////////////////////////////////
+//Location Constructor
 function Location(city, geoData) {
   this.search_query = city;
   this.formatted_query = geoData.results[0].formatted_address;
   this.latitude = geoData.results[0].geometry.location.lat;
   this.longitude = geoData.results[0].geometry.location.lng;
 }
-
+///////////////////////////////////////////////////////////////////////
+//Trail Constructor
 function Trail(trailData){
   this.name = trailData.name;
   this.location = trailData.location;
@@ -100,6 +102,7 @@ function Trail(trailData){
   this.condition_date = trailData.conditionDate.slice(0,9);
   this.condition_time = trailData.conditionDate.slice(11,18);
 }
+
 
 server.listen(PORT, () => {
   console.log(`listening on PORT ${PORT}`);
