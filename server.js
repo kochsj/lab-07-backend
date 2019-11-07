@@ -99,7 +99,7 @@ function Trail(trailData){
   this.summary = trailData.summary;
   this.trail_url = trailData.url;
   this.conditions = `${trailData.conditionStatus}, ${trailData.conditionDetails}`
-  this.condition_date = trailData.conditionDate.slice(0,9);
+  this.condition_date = trailData.conditionDate.slice(0,10);
   this.condition_time = trailData.conditionDate.slice(11,18);
 }
 
