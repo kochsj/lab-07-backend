@@ -54,15 +54,11 @@ function errorHandler(error, req, res) {
 ///////////////////////////////////////////////////////////////////////
 //Constructor Functions
 ///////////////////////////////////////////////////////////////////////
-// function Forecast(each) {
-//   let temp = new Date((each.time) * 1000);
-//   let tempScr = temp.toUTCString().slice(0, 15);
-//   this.forecast = each.summary;
-//   this.time = tempScr;
-// }
-function Forecast(day) {
-  this.forecast = day.summary;
-  this.time = new Date(day.time * 1000).toString().slice(0, 15);
+function Forecast(each) {
+  let temp = new Date((each.time) * 1000);
+  let tempScr = temp.toUTCString().slice(0, 16);
+  this.forecast = each.summary;
+  this.time = tempScr;
 }
 
 function Location(city, geoData) {
