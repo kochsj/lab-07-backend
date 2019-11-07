@@ -7,17 +7,21 @@
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-
+This app is depends on the following node modules:
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "superagent": "^5.1.0"
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
-
 11-5-2019 1:30pm - Application now has a fully-functional express server, with a GET route for the location resource.
+11-6-2019 10:30am - Application refactored to accept location data from geocode api.
+11-6-2019 6:30pm - Paths to trails API and Dark Sky APIs created and functional.
 
 ## Credits and Collaborations
-Terrell Douglas, Stephen Koch
+Terrell Douglas, Stephen Koch, Coel Tyrell
 -->
 
 Number and name of feature: Heroku Setup (TD/SK)
@@ -85,9 +89,9 @@ Estimate of time needed to complete: 1hr
 
 Start time: 10:46
 
-Finish time: _____
+Finish time: 12:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1hr15min
 
 
 
@@ -95,20 +99,20 @@ Number and name of feature: Weather Patterns
 
 Estimate of time needed to complete: 1hr
 
-Start time: _____
+Start time: 12:30
 
-Finish time: _____
+Finish time: 18:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2hours
 
 
 
-Number and name of feature: EventBrite
+Number and name of feature: Trails
 
 Estimate of time needed to complete: 1hr
 
-Start time: _____
+Start time: 18:00
 
-Finish time: _____
+Finish time: 18:30
 
-Actual time needed to complete: _____
+Actual time needed to complete: 30min
